@@ -127,14 +127,16 @@ main {
     box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
 }
 
-.key:hover {
-  background: var(--pink);
-  transform: translate(0, 0.25em);
-}
+@media (hover: hover) {
+  .key:hover {
+    background: var(--pink);
+    transform: translate(0, 0.25em);
+  }
 
-.key:hover::before {
-  box-shadow: 0 0 0 2px var(--key-border), 0 0.5em 0 0 var(--pink-shadow);
-  transform: translate3d(0, 0.5em, -1em);
+  .key:hover::before {
+    box-shadow: 0 0 0 2px var(--key-border), 0 0.5em 0 0 var(--pink-shadow);
+    transform: translate3d(0, 0.5em, -1em);
+  }
 }
 
 .key:active {
