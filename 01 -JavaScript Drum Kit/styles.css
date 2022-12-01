@@ -68,8 +68,28 @@ main {
 
 .keys__container {
   display: grid;
-  grid-template-columns: repeat(9, 1fr);
   gap: 2rem;
+  padding: 0 2rem;
+
+  grid-auto-columns: 1fr;
+  grid-template-columns: repeat(9, 1fr);
+}
+
+@media screen and (max-width: 1200px) {
+  .keys__container {
+    gap: 4rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 472px) {
+  .keys__container {
+    gap: 4rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .key:last-child {
+    grid-column: span 2;
+  }
 }
 
 .key {
@@ -130,6 +150,10 @@ main {
 span {
   font-weight: 600;
   text-transform: uppercase;
+
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 .background {
