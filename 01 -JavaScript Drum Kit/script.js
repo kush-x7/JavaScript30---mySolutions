@@ -31,7 +31,6 @@ window.addEventListener("keydown", (e) => {
 // Removing the class when transition end
 for (let i = 0; i < selectAllKeys.length; i++) {
   selectAllKeys[i].addEventListener("transitionend", (e) => {
-    console.log(e);
     if (e.propertyName !== "transform") return; // if we don't have property names as transformed than no need to continue. We want to work only on transform
     e.target.classList.remove("pressed");
   });
